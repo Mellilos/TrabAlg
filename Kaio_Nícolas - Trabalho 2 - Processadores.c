@@ -1,5 +1,4 @@
 //OBSERVAÇÃO: PODE ESCOLHER QUALQUER NOME. A SENHA É 'password' SEM AS ASPAS
-//Batata
 //Inclusão das bibliotecas necessárias
 #include<stdio.h>
 #include<stdlib.h>
