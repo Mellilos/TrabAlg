@@ -50,7 +50,7 @@ int main(){
     setlocale(LC_ALL,"Portuguese"); //Coloca a linguagem para Português
     //Declaração de variáveis
     FILE *arquivo;
-    int tecla,a,b,linha,linhaAux,coluna,colunaAux,opcao,escolha,reprocessamento,tentativa=0,dif,i;
+    int tecla,a,b,linha,linhaAux,coluna,colunaAux,opcao,escolha,reprocessamento,tentativa=0,dif,i,achou,id;
     char nome[30],senha[11],pass[]="password",comando[100],pasta[50],nomeArq[50],numTexto[20],texto[150],resp;
     login: //Define o ponto de início do Login de usuário
     	system("cls");
@@ -82,13 +82,14 @@ int main(){
         system("color 9F");
         gotoxy(48,1); printf("-----PROCESSADORES-----");
         gotoxy(50,10); printf("Cadastrar processador");
-		gotoxy(50,11); printf("Alterar processador");
-		gotoxy(50,12); printf("Excluir processador");
-		gotoxy(50,13); printf("Pesquisar processador por nome");
-		gotoxy(50,14); printf("Pesquisar processador por ID");
-		gotoxy(50,15); printf("Alterar pastas e arquivos");
-		gotoxy(50,16); printf("Créditos");
-		gotoxy(50,17); printf("Sair");
+        gotoxy(50,11); printf("Mostrar processadores");
+		gotoxy(50,12); printf("Alterar processador");
+		gotoxy(50,13); printf("Excluir processador");
+		gotoxy(50,14); printf("Pesquisar processador por nome");
+		gotoxy(50,15); printf("Pesquisar processador por ID");
+		gotoxy(50,16); printf("Alterar pastas e arquivos");
+		gotoxy(50,17); printf("Créditos");
+		gotoxy(50,18); printf("Sair");
 		gotoxy(1,28); printf("Conectado(a) como %s",nome);
 		gotoxy(45,25); printf("Pressione F1 para obter ajuda!");
         do{
@@ -97,9 +98,9 @@ int main(){
 				tecla=getch(); //Recebe as setas de navegação ou enter
 			}
             //Seta para baixo
-            if(tecla==baixo && b<=9){
-            	if(b==9){
-            		linha=10;linhaAux=17;b=2;
+            if(tecla==baixo && b<=10){
+            	if(b==10){
+            		linha=10;linhaAux=18;b=2;
 				}
 				else{
 					linhaAux=linha;
@@ -110,7 +111,7 @@ int main(){
 			//Seta para cima
             if(tecla==cima && b>=2){
 				if(b==2){
-            		linha=17;linhaAux=10;b=9;
+            		linha=18;linhaAux=10;b=10;
 				}
 				else{
 					linhaAux=linha;
@@ -129,7 +130,7 @@ int main(){
 				opcao=8;
 			}
 			if(tecla==f1){
-				opcao=9;
+				opcao=10;
 			}
         }while(opcao==0);
         switch (opcao){
@@ -465,8 +466,52 @@ int main(){
 					} while(reprocessamento==0);	
 				}while(reprocessamento!=2);
 	            break; //Fim Cadastrar
-            case 2: //Alterar processador
+            case 3: //Alterar processador
             	do{
+            		a=2;colunaAux=2;coluna=43;escolha=0;
+	            	system("cls");
+					system ("color 4E");
+	            	gotoxy(53,1); printf("-----ALTERAR-----");
+	            	do{
+	            		gotoxy(35,8); printf("                                     ");
+	            		gotoxy(35,6); printf("Digite o nome da pasta que contém o arquivo que deseja alterar: ");
+						gotoxy(35,8); gets(pasta);
+						strcpy(comando,"chdir ");
+						strcat(comando,pasta);
+						gotoxy(35,9); system(comando);
+					}while(system(comando)==1);
+					gotoxy(35,9); printf("                                                     ");
+					chdir(pasta);
+					gotoxy(35,10); printf("Digite o nome do arquivo que deseja alterar:");
+					gotoxy(35,12); gets(nomeArq);
+					
+					achou = 0;
+				  	//Abertura do arquivo
+				  	if((arquivo = fopen(nomeArq, "r+b")) == NULL) {
+				    	gotoxy(35,14); printf ("Falha ao abrir o arquivo %s",nomeArq);
+				    	getch();
+				    	return;
+				  	}
+				  	gotoxy(35,14); printf ("Qual o número do ID do processador que deseja alterar?\n");
+				  	scanf ("%d",&id);
+				  	//Leitura dos registros  
+				  	while (fread (&processador, sizeof(processadores), 1, arquivo) == 1 && !achou)
+				    	if (!processador.excluido && processador.id == id) {
+				      		fflush (stdin); // "Limpa" o buffer de entrada - teclado
+				      		system("cls");
+							system("color 2F");
+				      		//Volta o ponteiro
+				      		fseek (arquivo,-sizeof(processadores),SEEK_CUR);
+				      		//Grava os dados lidos - alterados
+				      		fwrite(&processador,sizeof(processadores),1,arquivo);
+				      		fflush(arquivo);
+				      		achou = 1;
+				   	 	}
+				  	if (!achou)
+				    	gotoxy(35,15); printf("Não há processador cadastrado com ID %d!",id);
+				  	fclose(arquivo);
+				  	getch();
+					
 					//Reprocessamento do alterar
 					a=2;colunaAux=2;coluna=53;reprocessamento=0;
 					system("cls");
@@ -513,7 +558,7 @@ int main(){
 					} while(reprocessamento==0);	
 				}while(reprocessamento!=2);
                 break; //Fim alterar
-            case 3: //Créditos
+            case 8: //Créditos
            	 	system("cls");
             	system("color B0");
             	printf("Programa desenvolvido por: \nKaio Henrique A. D. de Paulo.\n");
@@ -527,13 +572,13 @@ int main(){
             	gotoxy(1,27); printf("Conectado(a) como %s",nome);
             	gotoxy(1,28); system("pause");
             	break; //Fim créditos
-            case 8: //Sair
+            case 9: //Sair
             	system("cls");
                 system ("color 0F");
                 gotoxy(45,12.5); printf("Obrigado por utilizar o programa!");
                 gotoxy(40,25); printf(" ");
                 break; //Fim do programa
-            case 9: //Iníco ajuda
+            case 10: //Iníco ajuda
             	system("cls");
             	system("color 9f");
             	FILE *criptografia;
@@ -561,6 +606,6 @@ int main(){
                 system("pause");
                 goto inicio;
         }
-    }while(opcao!=8);
+    }while(opcao!=9);
     return 0; //Fim da main
 }
