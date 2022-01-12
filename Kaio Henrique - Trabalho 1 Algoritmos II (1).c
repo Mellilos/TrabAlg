@@ -8,7 +8,7 @@
 #include<string.h>
 #include<math.h>
 #include<time.h>
-//Define constantes para navegação nos menus
+//Define constantes para navegação nos menus.
 #define cima 72
 #define baixo 80
 #define esquerda 75
