@@ -1,6 +1,5 @@
 //OBSERVAÇÃO: PODE ESCOLHER QUALQUER NOME. A SENHA É 'password' SEM AS ASPAS
 //Inclusão das bibliotecas necessárias
-//Morte trevas solidão caos desespero inferno sangue
 #include<stdio.h>
 #include<stdlib.h>
 #include<conio.h>
