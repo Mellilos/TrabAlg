@@ -1,6 +1,5 @@
 //OBSERVAÇÃO: PODE ESCOLHER QUALQUER NOME. A SENHA É 'password' SEM AS ASPAS
 //Inclusão das bibliotecas necessárias
-//Batata 2
 #include<stdio.h>
 #include<stdlib.h>
 #include<conio.h>
