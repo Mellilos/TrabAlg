@@ -1,4 +1,4 @@
-//OBSERVAÇÃO: PODE ESCOLHER QUALQUER NOME. A SENHA É 'password' SEM AS ASPAS
+//OBSERVA��O: PODE ESCOLHER QUALQUER NOME. A SENHA É 'password' SEM AS ASPAS
 //Kainho
 // Nicolas
 //Inclusão das bibliotecas necessárias
