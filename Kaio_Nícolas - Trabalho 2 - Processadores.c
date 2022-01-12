@@ -1,6 +1,7 @@
-//OBSERVA«√O: PODE ESCOLHER QUALQUER NOME. A SENHA … 'password' SEM AS ASPAS
+//OBSERVA√á√ÉO: PODE ESCOLHER QUALQUER NOME. A SENHA √â 'password' SEM AS ASPAS
 //Kainho
-//Inclus„o das bibliotecas necess·rias
+// Nicolas
+//Inclus√£o das bibliotecas necess√°rias
 #include<stdio.h>
 #include<stdlib.h>
 #include<conio.h>
@@ -9,7 +10,7 @@
 #include<string.h>
 #include<math.h>
 #include<time.h>
-//Define constantes para navegaÁ„o nos menus
+//Define constantes para navega√ß√£o nos menus
 #define cima 72
 #define baixo 80
 #define esquerda 75
@@ -37,7 +38,7 @@ typedef struct{
 	float preco;
 	data lancamento;
 }processadores;
-//FunÁ„o cadastra
+//Fun√ß√£o cadastra
 processadores Cadastra()
 {
 	char numTexto[20];
@@ -54,28 +55,28 @@ processadores Cadastra()
 	gotoxy(2,7); printf("Marca do processador: ");
 	gets(processador.marca);
 	processador.id = atoi(numTexto);
-	gotoxy(2,8); printf("FrequÍncia base: ");
+	gotoxy(2,8); printf("Frequ√™ncia base: ");
 	gets(numTexto);
 	processador.frequenciaBase = atof(numTexto);
-	gotoxy(2,9); printf("FrequÍncia m·xima: ");
+	gotoxy(2,9); printf("Frequ√™ncia m√°xima: ");
 	gets(numTexto);
 	processador.frequenciaMax = atof(numTexto);
 	gotoxy(2,10); printf("Litografia(nm): ");
 	gets(numTexto);
 	processador.litografia = atoi(numTexto);
-	gotoxy(2,11); printf("Quantidade de n˙cleos: ");
+	gotoxy(2,11); printf("Quantidade de n√∫cleos: ");
 	gets(numTexto);
 	processador.nucleos = atoi(numTexto);
 	gotoxy(2,12); printf("Quantidade de threads: ");
 	gets(numTexto);
 	processador.threads = atoi(numTexto);
-	gotoxy(2,13); printf("MemÛria cachÍ: ");
+	gotoxy(2,13); printf("Mem√≥ria cach√™: ");
 	gets(numTexto);
 	processador.cache = atoi(numTexto);
-	gotoxy(2,14); printf("PreÁo: ");
+	gotoxy(2,14); printf("Pre√ßo: ");
 	gets(numTexto);
 	processador.preco = atof(numTexto);
-	gotoxy(2,15); printf("Data de lanÁamento:   /  /  ");
+	gotoxy(2,15); printf("Data de lan√ßamento:   /  /  ");
 	gotoxy(22,15); gets(numTexto);
 	processador.lancamento.dia = atoi(numTexto);
 	gotoxy(25,15); gets(numTexto);
@@ -84,8 +85,8 @@ processadores Cadastra()
 	processador.lancamento.ano = atoi(numTexto);
 }
 
-//Escopo das funÁıes a serem utilizadas
-//FunÁ„o gotoxy
+//Escopo das fun√ß√µes a serem utilizadas
+//Fun√ß√£o gotoxy
 void gotoxy(int x,int y){
     COORD c;
     c.X = x;
@@ -95,16 +96,16 @@ void gotoxy(int x,int y){
 //Main
 int main(){
 	processadores processador;
-    setlocale(LC_ALL,"Portuguese"); //Coloca a linguagem para PortuguÍs
-    //DeclaraÁ„o de vari·veis
+    setlocale(LC_ALL,"Portuguese"); //Coloca a linguagem para Portugu√™s
+    //Declara√ß√£o de vari√°veis
     FILE *arquivo;
     int tecla,a,b,linha,linhaAux,coluna,colunaAux,opcao,escolha,reprocessamento,tentativa=0,dif,i;
     char nome[30],senha[11],pass[]="password",comando[100],pasta[50],nomeArq[50],texto[150],resp;
-    login: //Define o ponto de inÌcio do Login de usu·rio
+    login: //Define o ponto de in√≠cio do Login de usu√°rio
     	system("cls");
     	system("color 8F");
     	gotoxy(50,1); printf("-----PROCESSADORES-----");
-    	gotoxy(35,12); printf("Usu·rio: ");
+    	gotoxy(35,12); printf("Usu√°rio: ");
     	gets(nome);
     	fflush(stdin);
     	gotoxy(35,13); printf("Senha: ");
@@ -124,7 +125,7 @@ int main(){
     		tentativa++;
 		}while(dif==1);
     do{
-        inicio: //Define o ponto de inÌcio (Menu principal)
+        inicio: //Define o ponto de in√≠cio (Menu principal)
         linha=10;linhaAux=2;b=2;opcao=0;
         system("cls");
         system("color 9F");
@@ -135,14 +136,14 @@ int main(){
 		gotoxy(50,13); printf("Pesquisar processador por nome");
 		gotoxy(50,14); printf("Pesquisar processador por ID");
 		gotoxy(50,15); printf("Alterar pastas e arquivos");
-		gotoxy(50,16); printf("CrÈditos");
+		gotoxy(50,16); printf("Cr√©ditos");
 		gotoxy(50,17); printf("Sair");
 		gotoxy(1,28); printf("Conectado(a) como %s",nome);
 		gotoxy(45,25); printf("Pressione F1 para obter ajuda!");
         do{
             gotoxy(46,linha); printf("->");
             if(kbhit){
-				tecla=getch(); //Recebe as setas de navegaÁ„o ou enter
+				tecla=getch(); //Recebe as setas de navega√ß√£o ou enter
 			}
             //Seta para baixo
             if(tecla==baixo && b<=9){
@@ -233,7 +234,7 @@ int main(){
 						strcat(comando,pasta);
 						system(comando);
 						chdir(pasta);
-						gotoxy(35,16); printf("Digite o nome do novo arquivo(sem a extens„o): ");
+						gotoxy(35,16); printf("Digite o nome do novo arquivo(sem a extens√£o): ");
 						gets(nomeArq);
 						strcat(nomeArq,".dat");
 						if ((arquivo = fopen(nomeArq, "wb")) == NULL) {
@@ -305,7 +306,7 @@ int main(){
 						}while(escolha==0);
 						
 						if(escolha==1){
-							gotoxy(35,16); printf("Digite o nome do novo arquivo(sem a extens„o): ");
+							gotoxy(35,16); printf("Digite o nome do novo arquivo(sem a extens√£o): ");
 							gets(nomeArq);
 							strcat(nomeArq,".dat");
 							if ((arquivo = fopen(nomeArq, "wb")) == NULL) {
@@ -327,7 +328,7 @@ int main(){
 							do{
 								gotoxy(35,16); printf("                                        ");
 								gotoxy(0,18); printf("                                                    ");
-								gotoxy(35,16); printf("Digite o nome do arquivo(sem a extens„o): ");
+								gotoxy(35,16); printf("Digite o nome do arquivo(sem a extens√£o): ");
 								gets(nomeArq);
 								strcat(nomeArq,".dat");
 								if ((arquivo = fopen(nomeArq, "ab")) == NULL){
@@ -354,7 +355,7 @@ int main(){
 					gotoxy(53,1); printf("-----CADASTRAR-----");
 					gotoxy(44,12); printf("Deseja realizar um novo cadastro?");
 					gotoxy(55,14); printf("Sim");
-					gotoxy(64,14); printf("N„o");
+					gotoxy(64,14); printf("N√£o");
 					gotoxy(1,28); printf("Conectado(a) como %s",nome);
 					do{
 						gotoxy(coluna,14); printf("->");
@@ -403,7 +404,7 @@ int main(){
 					gotoxy(1,28); printf("Conectado(a) como %s",nome);
 					gotoxy(45,12); printf("Deseja preencher outro cheuque?");
 					gotoxy(55,14); printf("Sim");
-					gotoxy(64,14); printf("N„o");
+					gotoxy(64,14); printf("N√£o");
 					do{
 						gotoxy(coluna,14); printf("->");
 						if(kbhit){
@@ -441,27 +442,27 @@ int main(){
 					} while(reprocessamento==0);	
 				}while(reprocessamento!=2);
                 break; //Fim alterar
-            case 3: //CrÈditos
+            case 3: //Cr√©ditos
            	 	system("cls");
             	system("color B0");
             	printf("Programa desenvolvido por: \nKaio Henrique A. D. de Paulo.\n");
             	printf("\nDisiciplina: \nAlgoritmos II.\n");
             	printf("\nProfessora: \nAndrea Vianna.\n");
-            	printf("\nDescriÁ„o: \nO programa foi desenvolvido como o primeiro trabalho da disciplina em quest„o ");
+            	printf("\nDescri√ß√£o: \nO programa foi desenvolvido como o primeiro trabalho da disciplina em quest√£o ");
             	printf("\ne tem o objetivo de sacar dinheiro e preencher cheques.\n");
-            	printf("\nData de inÌcio: \n15 de novembro de 2021.\n");
-            	printf("\nData de tÈrmino: \n21 de novembro de 2021.\n");
-            	printf("\n⁄ltima atualizaÁ„o: \n21 de novembro de 2021.\n\n");
+            	printf("\nData de in√≠cio: \n15 de novembro de 2021.\n");
+            	printf("\nData de t√©rmino: \n21 de novembro de 2021.\n");
+            	printf("\n√öltima atualiza√ß√£o: \n21 de novembro de 2021.\n\n");
             	gotoxy(1,27); printf("Conectado(a) como %s",nome);
             	gotoxy(1,28); system("pause");
-            	break; //Fim crÈditos
+            	break; //Fim cr√©ditos
             case 8: //Sair
             	system("cls");
                 system ("color 0F");
                 gotoxy(45,12.5); printf("Obrigado por utilizar o programa!");
                 gotoxy(40,25); printf(" ");
                 break; //Fim do programa
-            case 9: //InÌco ajuda
+            case 9: //In√≠co ajuda
             	system("cls");
             	system("color 9f");
             	FILE *criptografia;
@@ -484,7 +485,7 @@ int main(){
             	break; //Fim ajuda
             default:
             	system("cls");
-                printf("VocÍ deve escolher uma opÁ„o v·lida\n");
+                printf("Voc√™ deve escolher uma op√ß√£o v√°lida\n");
                 printf("Pressione qualquer tecla para voltar ao menu\n");
                 system("pause");
                 goto inicio;
