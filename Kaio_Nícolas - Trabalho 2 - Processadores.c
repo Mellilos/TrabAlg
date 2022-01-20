@@ -163,8 +163,8 @@ int main(){
 			}
     		gotoxy(43,13); printf("                             ");
     		gotoxy(43,13); gets(senha);
-    		if(strlen(senha)==0)
-    			dif=1;
+    		//if(strlen(senha)==0)
+    		//	dif=1;
     		for(i=0;i<strlen(senha);i++){
     			if(senha[i]!=pass[i]){
     				dif=1;
@@ -578,7 +578,7 @@ int main(){
 					}while(system(comando)==1);
 					gotoxy(25,9); printf("                                                     ");
 					chdir(pasta);
-					gotoxy(25,10); printf("Digite o nome do arquivo que deseja alterar:");
+					gotoxy(25,10); printf("Digite o nome do arquivo que deseja alterar (sem extensão):");
 					gotoxy(25,12); gets(nomeArq);
 					strcat(nomeArq,".dat");
 					
@@ -729,7 +729,7 @@ int main(){
 					}while(system(comando)==1);
 					gotoxy(25,9); printf("                                                     ");
 					chdir(pasta);
-					gotoxy(25,10); printf("Digite o nome do arquivo que deseja alterar:");
+					gotoxy(25,10); printf("Digite o nome do arquivo que deseja alterar (sem extensão):");
 					gotoxy(25,12); gets(nomeArq);
 					strcat(nomeArq,".dat");
 					
@@ -816,8 +816,10 @@ int main(){
 				      		achou = 1;
 				   	 	}
 				   	system("cls");
+				   	system("color 57");
+					gotoxy(53,1); printf("-----EXCLUIR-----");
 				  	if(!achou){
-				    	gotoxy(40,12); printf("Não há processador cadastrado com ID %d!",id);
+				    	gotoxy(37,12); printf("Não há processador cadastrado com ID %d!",id);
 				    }
 				    else{
 				    	gotoxy(50,12); printf("Exclusão realizada com sucesso!");
@@ -874,8 +876,224 @@ int main(){
 				}while(reprocessamento!=2);
                 break; //Fim exclusão
             case 4: //Pesquisa por nome
+            	do{
+            		a=2;colunaAux=31;coluna=6;escolha=0;
+	            	system("cls");
+					system ("color F0");
+	            	gotoxy(50,1); printf("-----PESQUISAR-----");
+	            	gotoxy(1,28); printf("Conectado(a) como %s",nome);
+	            	do{
+	            		gotoxy(0,10); printf("                                                    ");
+	            		gotoxy(25,8); printf("                                     ");
+	            		gotoxy(25,6); printf("Digite o nome da pasta que contém o arquivo no qual fará a pesquisa (sem extensão):");
+						gotoxy(25,8); gets(pasta);
+						strcpy(comando,"cd ");
+						strcat(comando,pasta);
+						gotoxy(25,9); system(comando);
+					}while(system(comando)==1);
+					gotoxy(25,9); printf("                                                     ");
+					chdir(pasta);
+					gotoxy(25,10); printf("Digite o nome do arquivo para fazer a pesquisa:");
+					gotoxy(25,12); gets(nomeArq);
+					strcat(nomeArq,".dat");
+					
+					achou = 0;
+				  	//Abertura do arquivo
+				  	if((arquivo = fopen(nomeArq, "rb")) == NULL) {
+				    	gotoxy(35,14); printf("Falha ao abrir o arquivo %s",nomeArq);
+				    	getch();
+				    	break;
+				  	}
+				  	gotoxy(25,14); printf("Qual o nome do processador que deseja pesquisar?\n");
+				  	gotoxy(25,16); gets(texto);
+				  	//Leitura dos registros  
+				  	while(fread (&processador, sizeof(processadores), 1, arquivo) == 1 && !achou)
+				    	if (!processador.excluido && strcmp(processador.nome,texto)==0) {
+				      		fflush(stdin);
+				      		system("cls");
+							system("color F0");
+							gotoxy(53,1); printf("-----PESQUISAR-----");
+							gotoxy(2,5); printf("ID do processador: %d",processador.id);
+							gotoxy(2,6); printf("Nome do processador: %s",processador.nome);
+							gotoxy(2,7); printf("Marca do processador: %s",processador.marca);
+							gotoxy(2,8); printf("Frequência base: %.2f",processador.frequenciaBase);
+							gotoxy(2,9); printf("Frequência máxima: %.2f",processador.frequenciaMax);
+							gotoxy(2,10); printf("Litografia(nm): %d",processador.litografia);
+							gotoxy(2,11); printf("Quantidade de núcleos: %d",processador.nucleos);
+							gotoxy(2,12); printf("Quantidade de threads: %d",processador.threads);
+							gotoxy(2,13); printf("Memória cachê: %d",processador.cache);
+							gotoxy(2,14); printf("Preço: %.2f",processador.preco);
+							gotoxy(2,15); printf("Data de lançamento: %2d/%2d/%2d",processador.lancamento.dia,processador.lancamento.mes,processador.lancamento.ano);
+							getch();
+							
+							fclose(arquivo);
+				  			chdir("..");
+				      		achou = 1;
+				   	 	}
+				   	system("cls");
+				   	system("color F0");
+				   	gotoxy(53,1); printf("-----PESQUISAR-----");
+				  	if(!achou){
+				    	gotoxy(40,12); printf("Não há processador cadastrado com nome %s!",texto);
+				    	gotoxy(1,28); printf("Conectado(a) como %s",nome);
+				  		getch();
+					}
+					
+					//Reprocessamento do pesquisar nome
+					a=2;colunaAux=2;coluna=53;reprocessamento=0;
+					system("cls");
+					system ("color F0");
+					gotoxy(52,1); printf("-----PESQUISAR-----");
+					gotoxy(1,28); printf("Conectado(a) como %s",nome);
+					gotoxy(45,12); printf("Deseja realizar outra pesquisa?");
+					gotoxy(55,14); printf("Sim");
+					gotoxy(64,14); printf("Não");
+					do{
+						gotoxy(coluna,14); printf("->");
+						if(kbhit){
+							tecla=getch();
+						}
+		            	// seta para direita
+		            	if(tecla==direita && a<=3){
+							if(a==3){
+		            			coluna=53;colunaAux=62;a=2;
+							}
+							else{
+								colunaAux=coluna;
+								coluna+=9;
+								a++;
+							}
+						}
+						// seta para esquerda
+				        if(tecla==esquerda && a>=2){
+							if(a==2){
+		            		coluna=62;colunaAux=53;a=3;
+							}
+							else{
+								colunaAux=coluna;
+								coluna-=9;
+								a--;
+							}
+						}
+				        if(coluna!=colunaAux){
+							gotoxy(colunaAux,14); printf("  ");
+							colunaAux=coluna;
+						}
+				        if(tecla==enter){
+							reprocessamento=a-1;
+						}
+					} while(reprocessamento==0);	
+				}while(reprocessamento!=2);
             	break; //Fim pesquisa por nome
             case 5: //Pesquisa por ID
+            	do{
+            		a=2;colunaAux=31;coluna=6;escolha=0;
+	            	system("cls");
+					system ("color F4");
+	            	gotoxy(50,1); printf("-----PESQUISAR-----");
+	            	gotoxy(1,28); printf("Conectado(a) como %s",nome);
+	            	do{
+	            		gotoxy(0,10); printf("                                                    ");
+	            		gotoxy(25,8); printf("                                     ");
+	            		gotoxy(25,6); printf("Digite o nome da pasta que contém o arquivo no qual fará a pesquisa (sem extensão):");
+						gotoxy(25,8); gets(pasta);
+						strcpy(comando,"cd ");
+						strcat(comando,pasta);
+						gotoxy(25,9); system(comando);
+					}while(system(comando)==1);
+					gotoxy(25,9); printf("                                                     ");
+					chdir(pasta);
+					gotoxy(25,10); printf("Digite o nome do arquivo para fazer a pesquisa:");
+					gotoxy(25,12); gets(nomeArq);
+					strcat(nomeArq,".dat");
+					
+					achou = 0;
+				  	//Abertura do arquivo
+				  	if((arquivo = fopen(nomeArq, "rb")) == NULL) {
+				    	gotoxy(35,14); printf("Falha ao abrir o arquivo %s",nomeArq);
+				    	getch();
+				    	break;
+				  	}
+				  	gotoxy(25,14); printf("Qual o ID do processador que deseja pesquisar?\n");
+				  	gotoxy(25,16); scanf("%d",&id);
+				  	//Leitura dos registros  
+				  	while(fread (&processador, sizeof(processadores), 1, arquivo) == 1 && !achou)
+				    	if(!processador.excluido && processador.id==id) {
+				      		fflush(stdin);
+				      		system("cls");
+							system("color F4");
+							gotoxy(53,1); printf("-----PESQUISAR-----");
+							gotoxy(2,5); printf("ID do processador: %d",processador.id);
+							gotoxy(2,6); printf("Nome do processador: %s",processador.nome);
+							gotoxy(2,7); printf("Marca do processador: %s",processador.marca);
+							gotoxy(2,8); printf("Frequência base: %.2f",processador.frequenciaBase);
+							gotoxy(2,9); printf("Frequência máxima: %.2f",processador.frequenciaMax);
+							gotoxy(2,10); printf("Litografia(nm): %d",processador.litografia);
+							gotoxy(2,11); printf("Quantidade de núcleos: %d",processador.nucleos);
+							gotoxy(2,12); printf("Quantidade de threads: %d",processador.threads);
+							gotoxy(2,13); printf("Memória cachê: %d",processador.cache);
+							gotoxy(2,14); printf("Preço: %.2f",processador.preco);
+							gotoxy(2,15); printf("Data de lançamento: %2d/%2d/%2d",processador.lancamento.dia,processador.lancamento.mes,processador.lancamento.ano);
+							getch();
+							
+							fclose(arquivo);
+				  			chdir("..");
+				      		achou = 1;
+				   	 	}
+				   	system("cls");
+				   	system("color F4");
+				   	gotoxy(53,1); printf("-----PESQUISAR-----");
+				  	if(!achou){
+				    	gotoxy(40,12); printf("Não há processador cadastrado com ID %d!",id);
+				    	gotoxy(1,28); printf("Conectado(a) como %s",nome);
+				  		getch();
+					}
+					
+					//Reprocessamento do pesquisar ID
+					a=2;colunaAux=2;coluna=53;reprocessamento=0;
+					system("cls");
+					system ("color F4");
+					gotoxy(52,1); printf("-----PESQUISAR-----");
+					gotoxy(1,28); printf("Conectado(a) como %s",nome);
+					gotoxy(45,12); printf("Deseja realizar outra pesquisa?");
+					gotoxy(55,14); printf("Sim");
+					gotoxy(64,14); printf("Não");
+					do{
+						gotoxy(coluna,14); printf("->");
+						if(kbhit){
+							tecla=getch();
+						}
+		            	// seta para direita
+		            	if(tecla==direita && a<=3){
+							if(a==3){
+		            			coluna=53;colunaAux=62;a=2;
+							}
+							else{
+								colunaAux=coluna;
+								coluna+=9;
+								a++;
+							}
+						}
+						// seta para esquerda
+				        if(tecla==esquerda && a>=2){
+							if(a==2){
+		            		coluna=62;colunaAux=53;a=3;
+							}
+							else{
+								colunaAux=coluna;
+								coluna-=9;
+								a--;
+							}
+						}
+				        if(coluna!=colunaAux){
+							gotoxy(colunaAux,14); printf("  ");
+							colunaAux=coluna;
+						}
+				        if(tecla==enter){
+							reprocessamento=a-1;
+						}
+					} while(reprocessamento==0);	
+				}while(reprocessamento!=2);
             	break; //Fim pesquisa por ID
             case 6: //Alterar pastas
             	break; //Fim alterar pastas
