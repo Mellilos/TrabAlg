@@ -1,5 +1,5 @@
-//OBSERVA√á√ÉO: PODE ESCOLHER QUALQUER NOME. A SENHA √â 'password' SEM AS ASPAS.
-//Inclus√£o das bibliotecas necess√°rias
+//OBSERVA«√O: PODE ESCOLHER QUALQUER NOME. A SENHA … 'password' SEM AS ASPAS.
+//Inclus„o das bibliotecas necess·rias
 #include<stdio.h>
 #include<stdlib.h>
 #include<conio.h>
@@ -8,7 +8,7 @@
 #include<string.h>
 #include<math.h>
 #include<time.h>
-//Define constantes para navega√ß√£o nos menus
+//Define constantes para navegaÁ„o nos menus
 #define cima 72
 #define baixo 80
 #define esquerda 75
@@ -36,7 +36,7 @@ typedef struct{
 	float preco;
 	data lancamento;
 }processadores;
-//Fun√ß√µes do programa
+//FunÁıes do programa
 processadores cadastra()
 {
 	char numTexto[20];
@@ -49,28 +49,28 @@ processadores cadastra()
 	gets(processador.nome);
 	gotoxy(2,7); printf("Marca do processador: ");
 	gets(processador.marca);
-	gotoxy(2,8); printf("Frequ√™ncia base: ");
+	gotoxy(2,8); printf("FrequÍncia base: ");
 	gets(numTexto);
 	processador.frequenciaBase = atof(numTexto);
-	gotoxy(2,9); printf("Frequ√™ncia m√°xima: ");
+	gotoxy(2,9); printf("FrequÍncia m·xima: ");
 	gets(numTexto);
 	processador.frequenciaMax = atof(numTexto);
 	gotoxy(2,10); printf("Litografia(nm): ");
 	gets(numTexto);
 	processador.litografia = atoi(numTexto);
-	gotoxy(2,11); printf("Quantidade de n√∫cleos: ");
+	gotoxy(2,11); printf("Quantidade de n˙cleos: ");
 	gets(numTexto);
 	processador.nucleos = atoi(numTexto);
 	gotoxy(2,12); printf("Quantidade de threads: ");
 	gets(numTexto);
 	processador.threads = atoi(numTexto);
-	gotoxy(2,13); printf("Mem√≥ria cach√™: ");
+	gotoxy(2,13); printf("MemÛria cachÍ: ");
 	gets(numTexto);
 	processador.cache = atoi(numTexto);
-	gotoxy(2,14); printf("Pre√ßo: ");
+	gotoxy(2,14); printf("PreÁo: ");
 	gets(numTexto);
 	processador.preco = atof(numTexto);
-	gotoxy(2,15); printf("Data de lan√ßamento:   /  /  ");
+	gotoxy(2,15); printf("Data de lanÁamento:   /  /  ");
 	gotoxy(22,15); gets(numTexto);
 	processador.lancamento.dia = atoi(numTexto);
 	gotoxy(25,15); gets(numTexto);
@@ -88,28 +88,28 @@ processadores altera()
 	gets(processador.nome);
 	gotoxy(2,7); printf("Marca do processador: ");
 	gets(processador.marca);
-	gotoxy(2,8); printf("Frequ√™ncia base: ");
+	gotoxy(2,8); printf("FrequÍncia base: ");
 	gets(numTexto);
 	processador.frequenciaBase = atof(numTexto);
-	gotoxy(2,9); printf("Frequ√™ncia m√°xima: ");
+	gotoxy(2,9); printf("FrequÍncia m·xima: ");
 	gets(numTexto);
 	processador.frequenciaMax = atof(numTexto);
 	gotoxy(2,10); printf("Litografia(nm): ");
 	gets(numTexto);
 	processador.litografia = atoi(numTexto);
-	gotoxy(2,11); printf("Quantidade de n√∫cleos: ");
+	gotoxy(2,11); printf("Quantidade de n˙cleos: ");
 	gets(numTexto);
 	processador.nucleos = atoi(numTexto);
 	gotoxy(2,12); printf("Quantidade de threads: ");
 	gets(numTexto);
 	processador.threads = atoi(numTexto);
-	gotoxy(2,13); printf("Mem√≥ria cach√™: ");
+	gotoxy(2,13); printf("MemÛria cache: ");
 	gets(numTexto);
 	processador.cache = atoi(numTexto);
-	gotoxy(2,14); printf("Pre√ßo: ");
+	gotoxy(2,14); printf("PreÁo: ");
 	gets(numTexto);
 	processador.preco = atof(numTexto);
-	gotoxy(2,15); printf("Data de lan√ßamento:   /  /  ");
+	gotoxy(2,15); printf("Data de lanÁamento:   /  /  ");
 	gotoxy(22,15); gets(numTexto);
 	processador.lancamento.dia = atoi(numTexto);
 	gotoxy(25,15); gets(numTexto);
@@ -123,17 +123,17 @@ processadores mostra(){
 	gotoxy(2,5); printf("ID do processador: %d",processador.id);
 	gotoxy(2,6); printf("Nome do processador: %s",processador.nome);
 	gotoxy(2,7); printf("Marca do processador: %s",processador.marca);
-	gotoxy(2,8); printf("Frequ√™ncia base: %.2f",processador.frequenciaBase);
-	gotoxy(2,9); printf("Frequ√™ncia m√°xima: %.2f",processador.frequenciaMax);
+	gotoxy(2,8); printf("FrequÍncia base: %.2f",processador.frequenciaBase);
+	gotoxy(2,9); printf("FrequÍncia m·xima: %.2f",processador.frequenciaMax);
 	gotoxy(2,10); printf("Litografia(nm): %d",processador.litografia);
-	gotoxy(2,11); printf("Quantidade de n√∫cleos: %d",processador.nucleos);
+	gotoxy(2,11); printf("Quantidade de n˙cleos: %d",processador.nucleos);
 	gotoxy(2,12); printf("Quantidade de threads: %d",processador.threads);
-	gotoxy(2,13); printf("Mem√≥ria cach√™: %d",processador.cache);
-	gotoxy(2,14); printf("Pre√ßo: %.2f",processador.preco);
-	gotoxy(2,15); printf("Data de lan√ßamento: %2d/%2d/%2d",processador.lancamento.dia,processador.lancamento.mes,processador.lancamento.ano);
+	gotoxy(2,13); printf("MemÛria cache: %d",processador.cache);
+	gotoxy(2,14); printf("PreÁo: %.2f",processador.preco);
+	gotoxy(2,15); printf("Data de lanÁamento: %2d/%2d/%2d",processador.lancamento.dia,processador.lancamento.mes,processador.lancamento.ano);
 	getch();
 }
-//Fun√ß√£o gotoxy
+//FunÁ„o gotoxy
 void gotoxy(int x,int y){
     COORD c;
     c.X = x;
@@ -143,16 +143,16 @@ void gotoxy(int x,int y){
 //Main
 int main(){
 	processadores processador;
-    setlocale(LC_ALL,"Portuguese"); //Coloca a linguagem para Portugu√™s
-    //Declara√ß√£o de vari√°veis
+    setlocale(LC_ALL,"Portuguese"); //Coloca a linguagem para PortuguÍs
+    //DeclaraÁ„o de vari·veis
     FILE *arquivo;
     int tecla,a,b,linha,linhaAux,coluna,colunaAux,opcao,escolha,reprocessamento,tentativa=0,dif,i,achou,id;
     char nome[30],senha[11],pass[]="password",comando[100],pasta[50],nomeArq[50],numTexto[20],texto[150],resp;
-    login: //Define o ponto de in√≠cio do Login de usu√°rio
+    login: //Define o ponto de inÌcio do Login de usu·rio
     	system("cls");
     	system("color 8F");
     	gotoxy(50,1); printf("-----PROCESSADORES-----");
-    	gotoxy(35,12); printf("Usu√°rio: ");
+    	gotoxy(35,12); printf("Usu·rio: ");
     	gets(nome);
     	fflush(stdin);
     	gotoxy(35,13); printf("Senha: ");
@@ -174,7 +174,7 @@ int main(){
     		tentativa++;
 		}while(dif==1);
     do{
-        inicio: //Define o ponto de in√≠cio (Menu principal)
+        inicio: //Define o ponto de inÌcio (Menu principal)
         linha=10;linhaAux=2;b=2;opcao=0;
         system("cls");
         system("color 9F");
@@ -184,15 +184,15 @@ int main(){
 		gotoxy(50,12); printf("Excluir processador");
 		gotoxy(50,13); printf("Pesquisar processador por nome");
 		gotoxy(50,14); printf("Pesquisar processador por ID");
-		gotoxy(50,15); printf("Alterar pastas e arquivos");
-		gotoxy(50,16); printf("Cr√©ditos");
+		gotoxy(50,15); printf("Manipular pastas e arquivos");
+		gotoxy(50,16); printf("CrÈditos");
 		gotoxy(50,17); printf("Sair");
 		gotoxy(1,28); printf("Conectado(a) como %s",nome);
 		gotoxy(45,25); printf("Pressione F1 para obter ajuda!");
         do{
             gotoxy(46,linha); printf("->");
             if(kbhit){
-				tecla=getch(); //Recebe as setas de navega√ß√£o ou enter
+				tecla=getch(); //Recebe as setas de navegaÁ„o ou enter
 			}
             //Seta para baixo
             if(tecla==baixo && b<=9){
@@ -283,7 +283,7 @@ int main(){
 						strcat(comando,pasta);
 						system(comando);
 						chdir(pasta);
-						gotoxy(35,16); printf("Digite o nome do novo arquivo(sem a extens√£o): ");
+						gotoxy(35,16); printf("Digite o nome do novo arquivo(sem a extens„o): ");
 						gets(nomeArq);
 						strcat(nomeArq,".dat");
 						if ((arquivo = fopen(nomeArq, "wb")) == NULL) {
@@ -302,28 +302,28 @@ int main(){
 							gets(processador.nome);
 							gotoxy(2,7); printf("Marca do processador: ");
 							gets(processador.marca);
-							gotoxy(2,8); printf("Frequ√™ncia base: ");
+							gotoxy(2,8); printf("FrequÍncia base: ");
 							gets(numTexto);
 							processador.frequenciaBase = atof(numTexto);
-							gotoxy(2,9); printf("Frequ√™ncia m√°xima: ");
+							gotoxy(2,9); printf("FrequÍncia m·xima: ");
 							gets(numTexto);
 							processador.frequenciaMax = atof(numTexto);
 							gotoxy(2,10); printf("Litografia(nm): ");
 							gets(numTexto);
 							processador.litografia = atoi(numTexto);
-							gotoxy(2,11); printf("Quantidade de n√∫cleos: ");
+							gotoxy(2,11); printf("Quantidade de n˙cleos: ");
 							gets(numTexto);
 							processador.nucleos = atoi(numTexto);
 							gotoxy(2,12); printf("Quantidade de threads: ");
 							gets(numTexto);
 							processador.threads = atoi(numTexto);
-							gotoxy(2,13); printf("Mem√≥ria cach√™: ");
+							gotoxy(2,13); printf("MemÛria cache: ");
 							gets(numTexto);
 							processador.cache = atoi(numTexto);
-							gotoxy(2,14); printf("Pre√ßo: ");
+							gotoxy(2,14); printf("PreÁo: ");
 							gets(numTexto);
 							processador.preco = atof(numTexto);
-							gotoxy(2,15); printf("Data de lan√ßamento:   /  /  ");
+							gotoxy(2,15); printf("Data de lanÁamento:   /  /  ");
 							gotoxy(22,15); gets(numTexto);
 							processador.lancamento.dia = atoi(numTexto);
 							gotoxy(25,15); gets(numTexto);
@@ -394,7 +394,7 @@ int main(){
 						}while(escolha==0);
 						
 						if(escolha==1){
-							gotoxy(35,16); printf("Digite o nome do novo arquivo(sem a extens√£o): ");
+							gotoxy(35,16); printf("Digite o nome do novo arquivo(sem a extens„o): ");
 							gets(nomeArq);
 							strcat(nomeArq,".dat");
 							if ((arquivo = fopen(nomeArq, "wb")) == NULL) {
@@ -413,28 +413,28 @@ int main(){
 								gets(processador.nome);
 								gotoxy(2,7); printf("Marca do processador: ");
 								gets(processador.marca);
-								gotoxy(2,8); printf("Frequ√™ncia base: ");
+								gotoxy(2,8); printf("FrequÍncia base: ");
 								gets(numTexto);
 								processador.frequenciaBase = atof(numTexto);
-								gotoxy(2,9); printf("Frequ√™ncia m√°xima: ");
+								gotoxy(2,9); printf("FrequÍncia m·xima: ");
 								gets(numTexto);
 								processador.frequenciaMax = atof(numTexto);
 								gotoxy(2,10); printf("Litografia(nm): ");
 								gets(numTexto);
 								processador.litografia = atoi(numTexto);
-								gotoxy(2,11); printf("Quantidade de n√∫cleos: ");
+								gotoxy(2,11); printf("Quantidade de n˙cleos: ");
 								gets(numTexto);
 								processador.nucleos = atoi(numTexto);
 								gotoxy(2,12); printf("Quantidade de threads: ");
 								gets(numTexto);
 								processador.threads = atoi(numTexto);
-								gotoxy(2,13); printf("Mem√≥ria cach√™: ");
+								gotoxy(2,13); printf("MemÛria cachÍ: ");
 								gets(numTexto);
 								processador.cache = atoi(numTexto);
-								gotoxy(2,14); printf("Pre√ßo: ");
+								gotoxy(2,14); printf("PreÁo: ");
 								gets(numTexto);
 								processador.preco = atof(numTexto);
-								gotoxy(2,15); printf("Data de lan√ßamento:   /  /  ");
+								gotoxy(2,15); printf("Data de lanÁamento:   /  /  ");
 								gotoxy(22,15); gets(numTexto);
 								processador.lancamento.dia = atoi(numTexto);
 								gotoxy(25,15); gets(numTexto);
@@ -455,7 +455,7 @@ int main(){
 							do{
 								gotoxy(35,16); printf("                                        ");
 								gotoxy(0,18); printf("                                                    ");
-								gotoxy(35,16); printf("Digite o nome do arquivo(sem a extens√£o): ");
+								gotoxy(35,16); printf("Digite o nome do arquivo(sem a extens„o): ");
 								gets(nomeArq);
 								strcat(nomeArq,".dat");
 								if ((arquivo = fopen(nomeArq, "ab")) == NULL){
@@ -474,28 +474,28 @@ int main(){
 								gets(processador.nome);
 								gotoxy(2,7); printf("Marca do processador: ");
 								gets(processador.marca);
-								gotoxy(2,8); printf("Frequ√™ncia base: ");
+								gotoxy(2,8); printf("FrequÍncia base: ");
 								gets(numTexto);
 								processador.frequenciaBase = atof(numTexto);
-								gotoxy(2,9); printf("Frequ√™ncia m√°xima: ");
+								gotoxy(2,9); printf("FrequÍncia m·xima: ");
 								gets(numTexto);
 								processador.frequenciaMax = atof(numTexto);
 								gotoxy(2,10); printf("Litografia(nm): ");
 								gets(numTexto);
 								processador.litografia = atoi(numTexto);
-								gotoxy(2,11); printf("Quantidade de n√∫cleos: ");
+								gotoxy(2,11); printf("Quantidade de n˙cleos: ");
 								gets(numTexto);
 								processador.nucleos = atoi(numTexto);
 								gotoxy(2,12); printf("Quantidade de threads: ");
 								gets(numTexto);
 								processador.threads = atoi(numTexto);
-								gotoxy(2,13); printf("Mem√≥ria cach√™: ");
+								gotoxy(2,13); printf("MemÛria cachÍ: ");
 								gets(numTexto);
 								processador.cache = atoi(numTexto);
-								gotoxy(2,14); printf("Pre√ßo: ");
+								gotoxy(2,14); printf("PreÁo: ");
 								gets(numTexto);
 								processador.preco = atof(numTexto);
-								gotoxy(2,15); printf("Data de lan√ßamento:   /  /  ");
+								gotoxy(2,15); printf("Data de lanÁamento:   /  /  ");
 								gotoxy(22,15); gets(numTexto);
 								processador.lancamento.dia = atoi(numTexto);
 								gotoxy(25,15); gets(numTexto);
@@ -521,7 +521,7 @@ int main(){
 					gotoxy(53,1); printf("-----CADASTRAR-----");
 					gotoxy(44,12); printf("Deseja realizar um novo cadastro?");
 					gotoxy(55,14); printf("Sim");
-					gotoxy(64,14); printf("N√£o");
+					gotoxy(64,14); printf("N„o");
 					gotoxy(1,28); printf("Conectado(a) como %s",nome);
 					do{
 						gotoxy(coluna,14); printf("->");
@@ -570,7 +570,7 @@ int main(){
 	            	do{
 	            		gotoxy(0,10); printf("                                                    ");
 	            		gotoxy(25,8); printf("                                     ");
-	            		gotoxy(25,6); printf("Digite o nome da pasta que cont√©m o arquivo que deseja alterar: ");
+	            		gotoxy(25,6); printf("Digite o nome da pasta que contÈm o arquivo que deseja alterar: ");
 						gotoxy(25,8); gets(pasta);
 						strcpy(comando,"cd ");
 						strcat(comando,pasta);
@@ -578,7 +578,7 @@ int main(){
 					}while(system(comando)==1);
 					gotoxy(25,9); printf("                                                     ");
 					chdir(pasta);
-					gotoxy(25,10); printf("Digite o nome do arquivo que deseja alterar (sem extensÔøΩo):");
+					gotoxy(25,10); printf("Digite o nome do arquivo que deseja alterar (sem extens?o):");
 					gotoxy(25,12); gets(nomeArq);
 					strcat(nomeArq,".dat");
 					
@@ -589,7 +589,7 @@ int main(){
 				    	getch();
 				    	break;
 				  	}
-				  	gotoxy(25,14); printf ("Qual o n√∫mero do ID do processador que deseja alterar?\n");
+				  	gotoxy(25,14); printf ("Qual o n˙mero do ID do processador que deseja alterar?\n");
 				  	gotoxy(25,16); scanf ("%d",&id);
 				  	//Leitura dos registros  
 				  	while (fread (&processador, sizeof(processadores), 1, arquivo) == 1 && !achou)
@@ -603,14 +603,14 @@ int main(){
 							gotoxy(2,5); printf("ID do processador: %d",processador.id);
 							gotoxy(2,6); printf("Nome do processador: %s",processador.nome);
 							gotoxy(2,7); printf("Marca do processador: %s",processador.marca);
-							gotoxy(2,8); printf("Frequ√™ncia base: %.2f",processador.frequenciaBase);
-							gotoxy(2,9); printf("Frequ√™ncia m√°xima: %.2f",processador.frequenciaMax);
+							gotoxy(2,8); printf("FrequÍncia base: %.2f",processador.frequenciaBase);
+							gotoxy(2,9); printf("FrequÍncia m·xima: %.2f",processador.frequenciaMax);
 							gotoxy(2,10); printf("Litografia(nm): %d",processador.litografia);
-							gotoxy(2,11); printf("Quantidade de n√∫cleos: %d",processador.nucleos);
+							gotoxy(2,11); printf("Quantidade de n˙cleos: %d",processador.nucleos);
 							gotoxy(2,12); printf("Quantidade de threads: %d",processador.threads);
-							gotoxy(2,13); printf("Mem√≥ria cach√™: %d",processador.cache);
-							gotoxy(2,14); printf("Pre√ßo: %.2f",processador.preco);
-							gotoxy(2,15); printf("Data de lan√ßamento: %2d/%2d/%2d",processador.lancamento.dia,processador.lancamento.mes,processador.lancamento.ano);
+							gotoxy(2,13); printf("MemÛria cache: %d",processador.cache);
+							gotoxy(2,14); printf("PreÁo: %.2f",processador.preco);
+							gotoxy(2,15); printf("Data de lanÁamento: %2d/%2d/%2d",processador.lancamento.dia,processador.lancamento.mes,processador.lancamento.ano);
 							getch();
 							
 							system("cls");
@@ -621,28 +621,28 @@ int main(){
 							gets(processador.nome);
 							gotoxy(2,7); printf("Marca do processador: ");
 							gets(processador.marca);
-							gotoxy(2,8); printf("Frequ√™ncia base: ");
+							gotoxy(2,8); printf("FrequÍncia base: ");
 							gets(numTexto);
 							processador.frequenciaBase = atof(numTexto);
-							gotoxy(2,9); printf("Frequ√™ncia m√°xima: ");
+							gotoxy(2,9); printf("FrequÍncia m·xima: ");
 							gets(numTexto);
 							processador.frequenciaMax = atof(numTexto);
 							gotoxy(2,10); printf("Litografia(nm): ");
 							gets(numTexto);
 							processador.litografia = atoi(numTexto);
-							gotoxy(2,11); printf("Quantidade de n√∫cleos: ");
+							gotoxy(2,11); printf("Quantidade de n˙cleos: ");
 							gets(numTexto);
 							processador.nucleos = atoi(numTexto);
 							gotoxy(2,12); printf("Quantidade de threads: ");
 							gets(numTexto);
 							processador.threads = atoi(numTexto);
-							gotoxy(2,13); printf("Mem√≥ria cach√™: ");
+							gotoxy(2,13); printf("MemÛria cache: ");
 							gets(numTexto);
 							processador.cache = atoi(numTexto);
-							gotoxy(2,14); printf("Pre√ßo: ");
+							gotoxy(2,14); printf("PreÁo: ");
 							gets(numTexto);
 							processador.preco = atof(numTexto);
-							gotoxy(2,15); printf("Data de lan√ßamento:   /  /  ");
+							gotoxy(2,15); printf("Data de lanÁamento:   /  /  ");
 							gotoxy(22,15); gets(numTexto);
 							processador.lancamento.dia = atoi(numTexto);
 							gotoxy(25,15); gets(numTexto);
@@ -658,11 +658,11 @@ int main(){
 				      		achou = 1;
 				   	 	}
 				  	if(!achou){
-				    	gotoxy(35,15); printf("N√£o h√° processador cadastrado com ID %d!",id);
+				    	gotoxy(35,15); printf("N„o h· processador cadastrado com ID %d!",id);
 				    }
 				  	fclose(arquivo);
 				  	chdir("..");
-				  	gotoxy(2,16); printf("Altera√ß√£o realizada com sucesso!");
+				  	gotoxy(2,16); printf("AlteraÁ„o realizada com sucesso!");
 				  	getch();
 					
 					//Reprocessamento do alterar
@@ -670,9 +670,9 @@ int main(){
 					system("cls");
 					system ("color 4E");
 					gotoxy(53,1); printf("-----ALTERAR-----");
-					gotoxy(45,12); printf("Deseja realizar outra altera√ß√£o?");
+					gotoxy(45,12); printf("Deseja realizar outra alteraÁ„o?");
 					gotoxy(55,14); printf("Sim");
-					gotoxy(64,14); printf("N√£o");
+					gotoxy(64,14); printf("N„o");
 					gotoxy(1,28); printf("Conectado(a) como %s",nome);
 					do{
 						gotoxy(coluna,14); printf("->");
@@ -711,7 +711,7 @@ int main(){
 					} while(reprocessamento==0);	
 				}while(reprocessamento!=2);
                 break; //Fim alterar
-            case 3: //Exclus√£o
+            case 3: //Exclus„o
             	do{
             		a=2;colunaAux=31;coluna=6;escolha=0;
 	            	system("cls");
@@ -721,7 +721,7 @@ int main(){
 	            	do{
 	            		gotoxy(0,10); printf("                                                    ");
 	            		gotoxy(25,8); printf("                                     ");
-	            		gotoxy(25,6); printf("Digite o nome da pasta que cont√©m o arquivo que deseja alterar:");
+	            		gotoxy(25,6); printf("Digite o nome da pasta que contÈm o arquivo que deseja alterar:");
 						gotoxy(25,8); gets(pasta);
 						strcpy(comando,"cd ");
 						strcat(comando,pasta);
@@ -729,7 +729,7 @@ int main(){
 					}while(system(comando)==1);
 					gotoxy(25,9); printf("                                                     ");
 					chdir(pasta);
-					gotoxy(25,10); printf("Digite o nome do arquivo que deseja alterar (sem extensÔøΩo):");
+					gotoxy(25,10); printf("Digite o nome do arquivo que deseja alterar (sem extens?o):");
 					gotoxy(25,12); gets(nomeArq);
 					strcat(nomeArq,".dat");
 					
@@ -740,7 +740,7 @@ int main(){
 				    	getch();
 				    	break;
 				  	}
-				  	gotoxy(25,14); printf ("Qual o n√∫mero do ID do processador que deseja excluir?\n");
+				  	gotoxy(25,14); printf ("Qual o n˙mero do ID do processador que deseja excluir?\n");
 				  	gotoxy(25,16); scanf ("%d",&id);
 				  	//Leitura dos registros  
 				  	while (fread (&processador, sizeof(processadores), 1, arquivo) == 1 && !achou)
@@ -752,18 +752,18 @@ int main(){
 							gotoxy(2,5); printf("ID do processador: %d",processador.id);
 							gotoxy(2,6); printf("Nome do processador: %s",processador.nome);
 							gotoxy(2,7); printf("Marca do processador: %s",processador.marca);
-							gotoxy(2,8); printf("Frequ√™ncia base: %.2f",processador.frequenciaBase);
-							gotoxy(2,9); printf("Frequ√™ncia m√°xima: %.2f",processador.frequenciaMax);
+							gotoxy(2,8); printf("FrequÍncia base: %.2f",processador.frequenciaBase);
+							gotoxy(2,9); printf("FrequÍncia m·xima: %.2f",processador.frequenciaMax);
 							gotoxy(2,10); printf("Litografia(nm): %d",processador.litografia);
-							gotoxy(2,11); printf("Quantidade de n√∫cleos: %d",processador.nucleos);
+							gotoxy(2,11); printf("Quantidade de n˙cleos: %d",processador.nucleos);
 							gotoxy(2,12); printf("Quantidade de threads: %d",processador.threads);
-							gotoxy(2,13); printf("Mem√≥ria cach√™: %d",processador.cache);
-							gotoxy(2,14); printf("Pre√ßo: %.2f",processador.preco);
-							gotoxy(2,15); printf("Data de lan√ßamento: %2d/%2d/%2d",processador.lancamento.dia,processador.lancamento.mes,processador.lancamento.ano);
+							gotoxy(2,13); printf("MemÛria cache: %d",processador.cache);
+							gotoxy(2,14); printf("PreÁo: %.2f",processador.preco);
+							gotoxy(2,15); printf("Data de lanÁamento: %2d/%2d/%2d",processador.lancamento.dia,processador.lancamento.mes,processador.lancamento.ano);
 							
 							gotoxy(2,17); printf("Deseja mesmo excluir o processador acima?");
 							gotoxy(8,19); printf("Sim");
-							gotoxy(33,19); printf("N√£o");
+							gotoxy(33,19); printf("N„o");
 							gotoxy(1,28); printf("Conectado(a) como %s",nome);
 							do{
 								gotoxy(coluna,19); printf("->");
@@ -819,10 +819,10 @@ int main(){
 				   	system("color 57");
 					gotoxy(53,1); printf("-----EXCLUIR-----");
 				  	if(!achou){
-				    	gotoxy(40,12); printf("N√£o h√° processador cadastrado com ID %d!",id);
+				    	gotoxy(40,12); printf("N„o h· processador cadastrado com ID %d!",id);
 				    }
 				    else{
-				    	gotoxy(50,12); printf("Exclus√£o realizada com sucesso!");
+				    	gotoxy(50,12); printf("Exclus„o realizada com sucesso!");
 					}
 				  	fclose(arquivo);
 				  	chdir("..");
@@ -835,9 +835,9 @@ int main(){
 					system ("color 57");
 					gotoxy(53,1); printf("-----EXCLUIR-----");
 					gotoxy(1,28); printf("Conectado(a) como %s",nome);
-					gotoxy(45,12); printf("Deseja realizar outra altera√ß√£o?");
+					gotoxy(45,12); printf("Deseja realizar outra alteraÁ„o?");
 					gotoxy(55,14); printf("Sim");
-					gotoxy(64,14); printf("N√£o");
+					gotoxy(64,14); printf("N„o");
 					do{
 						gotoxy(coluna,14); printf("->");
 						if(kbhit){
@@ -874,7 +874,7 @@ int main(){
 						}
 					} while(reprocessamento==0);	
 				}while(reprocessamento!=2);
-                break; //Fim exclus√£o
+                break; //Fim exclus„o
             case 4: //Pesquisa por nome
             	do{
             		a=2;colunaAux=31;coluna=6;escolha=0;
@@ -885,7 +885,7 @@ int main(){
 	            	do{
 	            		gotoxy(0,10); printf("                                                    ");
 	            		gotoxy(25,8); printf("                                     ");
-	            		gotoxy(25,6); printf("Digite o nome da pasta que contÔøΩm o arquivo no qual farÔøΩ a pesquisa (sem extensÔøΩo):");
+	            		gotoxy(25,6); printf("Digite o nome da pasta que contÈm o arquivo no qual far· a pesquisa (sem extens„o):");
 						gotoxy(25,8); gets(pasta);
 						strcpy(comando,"cd ");
 						strcat(comando,pasta);
@@ -916,14 +916,14 @@ int main(){
 							gotoxy(2,5); printf("ID do processador: %d",processador.id);
 							gotoxy(2,6); printf("Nome do processador: %s",processador.nome);
 							gotoxy(2,7); printf("Marca do processador: %s",processador.marca);
-							gotoxy(2,8); printf("FrequÔøΩncia base: %.2f",processador.frequenciaBase);
-							gotoxy(2,9); printf("FrequÔøΩncia mÔøΩxima: %.2f",processador.frequenciaMax);
+							gotoxy(2,8); printf("FrequÍncia base: %.2f",processador.frequenciaBase);
+							gotoxy(2,9); printf("FrequÍncia m·xima: %.2f",processador.frequenciaMax);
 							gotoxy(2,10); printf("Litografia(nm): %d",processador.litografia);
-							gotoxy(2,11); printf("Quantidade de nÔøΩcleos: %d",processador.nucleos);
+							gotoxy(2,11); printf("Quantidade de n˙cleos: %d",processador.nucleos);
 							gotoxy(2,12); printf("Quantidade de threads: %d",processador.threads);
-							gotoxy(2,13); printf("MemÔøΩria cachÔøΩ: %d",processador.cache);
-							gotoxy(2,14); printf("PreÔøΩo: %.2f",processador.preco);
-							gotoxy(2,15); printf("Data de lanÔøΩamento: %2d/%2d/%2d",processador.lancamento.dia,processador.lancamento.mes,processador.lancamento.ano);
+							gotoxy(2,13); printf("MemÛria cache: %d",processador.cache);
+							gotoxy(2,14); printf("PreÁo: %.2f",processador.preco);
+							gotoxy(2,15); printf("Data de lanÁamento: %2d/%2d/%2d",processador.lancamento.dia,processador.lancamento.mes,processador.lancamento.ano);
 							getch();
 							
 							fclose(arquivo);
@@ -934,7 +934,7 @@ int main(){
 				   	system("color F0");
 				   	gotoxy(53,1); printf("-----PESQUISAR-----");
 				  	if(!achou){
-				    	gotoxy(40,12); printf("NÔøΩo hÔøΩ processador cadastrado com nome %s!",texto);
+				    	gotoxy(40,12); printf("N„o h· processador cadastrado com nome %s!",texto);
 				    	gotoxy(1,28); printf("Conectado(a) como %s",nome);
 				  		getch();
 					}
@@ -947,7 +947,7 @@ int main(){
 					gotoxy(1,28); printf("Conectado(a) como %s",nome);
 					gotoxy(45,12); printf("Deseja realizar outra pesquisa?");
 					gotoxy(55,14); printf("Sim");
-					gotoxy(64,14); printf("NÔøΩo");
+					gotoxy(64,14); printf("N„o");
 					do{
 						gotoxy(coluna,14); printf("->");
 						if(kbhit){
@@ -995,7 +995,7 @@ int main(){
 	            	do{
 	            		gotoxy(0,10); printf("                                                    ");
 	            		gotoxy(25,8); printf("                                     ");
-	            		gotoxy(25,6); printf("Digite o nome da pasta que contÔøΩm o arquivo no qual farÔøΩ a pesquisa (sem extensÔøΩo):");
+	            		gotoxy(25,6); printf("Digite o nome da pasta que contÈm o arquivo no qual far· a pesquisa (sem extensÁao):");
 						gotoxy(25,8); gets(pasta);
 						strcpy(comando,"cd ");
 						strcat(comando,pasta);
@@ -1026,14 +1026,14 @@ int main(){
 							gotoxy(2,5); printf("ID do processador: %d",processador.id);
 							gotoxy(2,6); printf("Nome do processador: %s",processador.nome);
 							gotoxy(2,7); printf("Marca do processador: %s",processador.marca);
-							gotoxy(2,8); printf("FrequÔøΩncia base: %.2f",processador.frequenciaBase);
-							gotoxy(2,9); printf("FrequÔøΩncia mÔøΩxima: %.2f",processador.frequenciaMax);
+							gotoxy(2,8); printf("FrequÍncia base: %.2f",processador.frequenciaBase);
+							gotoxy(2,9); printf("FrequÍncia m·xima: %.2f",processador.frequenciaMax);
 							gotoxy(2,10); printf("Litografia(nm): %d",processador.litografia);
-							gotoxy(2,11); printf("Quantidade de nÔøΩcleos: %d",processador.nucleos);
+							gotoxy(2,11); printf("Quantidade de n˙cleos: %d",processador.nucleos);
 							gotoxy(2,12); printf("Quantidade de threads: %d",processador.threads);
-							gotoxy(2,13); printf("MemÔøΩria cachÔøΩ: %d",processador.cache);
-							gotoxy(2,14); printf("PreÔøΩo: %.2f",processador.preco);
-							gotoxy(2,15); printf("Data de lanÔøΩamento: %2d/%2d/%2d",processador.lancamento.dia,processador.lancamento.mes,processador.lancamento.ano);
+							gotoxy(2,13); printf("MemÛria cache: %d",processador.cache);
+							gotoxy(2,14); printf("PreÁo: %.2f",processador.preco);
+							gotoxy(2,15); printf("Data de lanÁamento: %2d/%2d/%2d",processador.lancamento.dia,processador.lancamento.mes,processador.lancamento.ano);
 							getch();
 							
 							fclose(arquivo);
@@ -1044,7 +1044,7 @@ int main(){
 				   	system("color F4");
 				   	gotoxy(53,1); printf("-----PESQUISAR-----");
 				  	if(!achou){
-				    	gotoxy(40,12); printf("NÔøΩo hÔøΩ processador cadastrado com ID %d!",id);
+				    	gotoxy(40,12); printf("N„o h· processador cadastrado com ID %d!",id);
 				    	gotoxy(1,28); printf("Conectado(a) como %s",nome);
 				  		getch();
 					}
@@ -1057,7 +1057,7 @@ int main(){
 					gotoxy(1,28); printf("Conectado(a) como %s",nome);
 					gotoxy(45,12); printf("Deseja realizar outra pesquisa?");
 					gotoxy(55,14); printf("Sim");
-					gotoxy(64,14); printf("NÔøΩo");
+					gotoxy(64,14); printf("N„o");
 					do{
 						gotoxy(coluna,14); printf("->");
 						if(kbhit){
@@ -1096,28 +1096,98 @@ int main(){
 				}while(reprocessamento!=2);
             	break; //Fim pesquisa por ID
             case 6: //Alterar pastas
+            	do{
+			        pastas: //Define o ponto de inÌcio (alteraÁ„o de pastas)
+			        linha=10;linhaAux=2;b=2;opcao=0;
+			        system("cls");
+			        system("color B0");
+			        gotoxy(50,1); printf("-----PASTAS E ARQUIVOS-----");
+			        gotoxy(50,10); printf("Consultar arquivos de uma pasta");
+					gotoxy(50,11); printf("Renomear pasta/arquivo");
+					gotoxy(50,12); printf("Excluir pasta/arquivo");
+					gotoxy(50,13); printf("Mover/copiar arquivo para outra pasta");
+					gotoxy(50,14); printf("Alterar data e hora do sistema");
+					gotoxy(50,15); printf("Voltar");
+					gotoxy(1,28); printf("Conectado(a) como %s",nome);
+					gotoxy(45,25); printf("Pressione ESC para voltar ao menu principal!");
+			        do{
+			            gotoxy(46,linha); printf("->");
+			            if(kbhit){
+							tecla=getch(); //Recebe as setas de navegaÁ„o ou enter
+						}
+			            //Seta para baixo
+			            if(tecla==baixo && b<=6){
+			            	if(b==6){
+			            		linha=10;linhaAux=15;b=2;
+							}
+							else{
+								linhaAux=linha;
+								linha++;
+								b++;
+							}
+						}
+						//Seta para cima
+			            if(tecla==cima && b>=2){
+							if(b==2){
+			            		linha=15;linhaAux=10;b=6;
+							}
+							else{
+								linhaAux=linha;
+								linha--;
+								b--;
+							}
+						}
+			            if(linha!=linhaAux){
+							gotoxy(46,linhaAux); printf("  ");
+							linhaAux=linha;
+						}
+			            if(tecla==enter){
+							opcao=b-1;
+						}
+						if(tecla==esc){
+							opcao=5;
+						}
+						if(tecla==f1){
+							opcao=6;
+						}
+			        }while(opcao==0);
+			        switch (opcao){
+			        	case 1: //Consultar arquivos
+			        		break; //Fim consultar arquivos
+			        	case 2: //Renomear
+			        		break; //Fim renomear
+			        	case 3: //Excluir pasta/arqivos
+			        		break; //Fim excluir pasta/arquivos
+			        	case 4: //Mover arquivos
+			        		break; //Fim mover arquivos
+			        	case 5: //Alterar data e hora
+			        		break; //Fim alterar data e hora
+			        	case 6: //voltar
+			        		break;
+					}
+				}while(opcao!=6);
             	break; //Fim alterar pastas
-            case 7: //Cr√©ditos
+            case 7: //CrÈditos
             	system("cls");
             	system("color B0");
             	printf("Programa desenvolvido por: \nKaio Henrique A. D. de Paulo.\n");
             	printf("\nDisiciplina: \nAlgoritmos II.\n");
             	printf("\nProfessora: \nAndrea Vianna.\n");
-            	printf("\nDescri√ß√£o: \nO programa foi desenvolvido como o primeiro trabalho da disciplina em quest√£o ");
+            	printf("\nDescriÁ„o: \nO programa foi desenvolvido como o primeiro trabalho da disciplina em quest„o ");
             	printf("\ne tem o objetivo de sacar dinheiro e preencher cheques.\n");
-            	printf("\nData de in√≠cio: \n15 de novembro de 2021.\n");
-            	printf("\nData de t√©rmino: \n21 de novembro de 2021.\n");
-            	printf("\n√öltima atualiza√ß√£o: \n21 de novembro de 2021.\n\n");
+            	printf("\nData de inÌcio: \n15 de novembro de 2021.\n");
+            	printf("\nData de tÈrmino: \n21 de novembro de 2021.\n");
+            	printf("\n⁄ltima atualizaÁ„o: \n21 de novembro de 2021.\n\n");
             	gotoxy(1,27); printf("Conectado(a) como %s",nome);
             	gotoxy(1,28); system("pause");
-            	break; //Fim cr√©ditos
+            	break; //Fim crÈditos
             case 8: //Sair
            	 	system("cls");
                 system ("color 0F");
                 gotoxy(45,12.5); printf("Obrigado por utilizar o programa!");
                 gotoxy(40,25); printf(" ");
                 break; //Fim do programa
-            case 9: //In√≠co ajuda
+            case 9: //InÌco ajuda
             	system("cls");
             	system("color 9f");
             	FILE *criptografia;
@@ -1140,7 +1210,7 @@ int main(){
             	break; //Fim ajuda
             default:
             	system("cls");
-                printf("Voc√™ deve escolher uma op√ß√£o v√°lida\n");
+                printf("VocÍ deve escolher uma opÁ„o v·lida\n");
                 printf("Pressione qualquer tecla para voltar ao menu\n");
                 system("pause");
                 goto inicio;
